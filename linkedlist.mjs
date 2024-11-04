@@ -8,21 +8,25 @@ class LinkedList {
     const newNode = new Node(value)
     if (this.head === null) {
       this.head = newNode
+      return this.head
     } else {
       let current = this.head
       while (current.next !== null) {
         current = current.next
       }
       current.next = newNode
+      return current.next
     }
   }
   prepend(value) {
     const newNode = new Node(value)
     if (this.head === null) {
       this.head = newNode
+      return this.head
     } else {
       newNode.next = this.head
       this.head = newNode
+      return this.head
     }
   }
   size() {
@@ -111,7 +115,7 @@ class LinkedList {
       current = current.next
       index += 1
     }
-    return index
+    return null
   }
   toString() {
     let current = this.head
@@ -129,12 +133,9 @@ class LinkedList {
     let current = this.head
     let previous = null
     let newNode = new Node(value)
-    if (current === null) {
-      return current
-    }    
-    if (current !== null && index === 0) {
+    if (current === null && index === 0) {
       this.prepend(value)
-      return current
+      return this.head
     }
     for (let idx = 0; current !== null; idx++) {
       if (idx === index) {
