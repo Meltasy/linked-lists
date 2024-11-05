@@ -1,6 +1,6 @@
 # linked-lists
 
-An odin project on recursion
+An odin project on linked lists
 
 This is a mini project to practice my skills:
 
